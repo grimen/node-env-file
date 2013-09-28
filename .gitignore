@@ -1,0 +1,8 @@
+.DS_Store
+.coverage_data
+.*~
+*~
+tmp/*
+log/*
+node_modules
+npm-debug.log

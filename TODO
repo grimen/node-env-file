@@ -1,0 +1,6 @@
+
+:: NEXT
+
+- [FEATURE]: Optionally load environment async.
+
+- [FEATURE]: Pretty and colorized JSON.
