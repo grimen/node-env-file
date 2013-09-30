@@ -33,7 +33,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
 
 ```javascript
   var assert = require('assert');
-  var env = require('../');
+  var env = require('node-env-file');
 
   process.env.FOO = "defaultfoo";
 
@@ -95,7 +95,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
 
 ## Related Libraries
 
-* **[node-env-file](http://travis-ci.org/grimen/node-env-file)**
+* **[node-env-flag](http://github.com/grimen/node-env-flag)**
 
 
 ## Notes
