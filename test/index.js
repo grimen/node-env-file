@@ -142,6 +142,11 @@ module.exports = {
       expect(process.env.BAZ).to.be.equal(undefined);
       expect(process.env.QUX).to.be.equal(undefined);
 
+      expect(process.env.QUUX).to.be.equal('quux');
+      expect(process.env.QUUUX).to.be.equal('qu u ux');
+      expect(process.env.QUUUUX).to.be.equal('quuuux');
+      expect(process.env.QUUUUUX).to.be.equal('quuuuux');
+
       process.env.FOO = 'foo2';
 
       expect(function() {
