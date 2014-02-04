@@ -165,6 +165,14 @@ module.exports = {
       expect(process.env.QUX).to.be.equal(undefined);
     },
 
+    '("./fixtures/.env.3")': function () {
+      expect(function() {
+        env(__dirname + '/fixtures/.env.3');
+      }).to.not.throw(Error);
+
+      expect(process.env.FOO).to.be.equal('http://foo.com?bar=baz');
+    },
+
     '("./fixtures/.env.exports.0")': function () {
       expect(function() {
         env(__dirname + '/fixtures/.env.exports.0');
@@ -262,7 +270,15 @@ module.exports = {
       expect(process.env.BAR).to.be.equal('bar');
       expect(process.env.BAZ).to.be.equal(undefined);
       expect(process.env.QUX).to.be.equal(undefined);
-    }
+    },
+
+    '("./fixtures/.env.exports.3")': function () {
+      expect(function() {
+        env(__dirname + '/fixtures/.env.exports.3');
+      }).to.not.throw(Error);
+
+      expect(process.env.FOO).to.be.equal('http://foo.com?bar=baz');
+    }    
   }
 
 };
