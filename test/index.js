@@ -173,6 +173,14 @@ module.exports = {
       expect(process.env.FOO).to.be.equal('http://foo.com?bar=baz');
     },
 
+    '("./fixtures/.env.4")': function () {
+      expect(function() {
+        env(__dirname + '/fixtures/.env.4');
+      }).to.not.throw(Error);
+
+      expect(process.env.FOO).to.be.equal('http://foo.com#hash?bar=baz');
+    },
+
     '("./fixtures/.env.exports.0")': function () {
       expect(function() {
         env(__dirname + '/fixtures/.env.exports.0');
@@ -278,7 +286,7 @@ module.exports = {
       }).to.not.throw(Error);
 
       expect(process.env.FOO).to.be.equal('http://foo.com?bar=baz');
-    }    
+    }
   }
 
 };
