@@ -1,6 +1,7 @@
 # some env variables using exports syntax
 
-exports FOO=foo2
+exports      FOO=foo2
+exports X=
 exports BAR=bar2
 exports BAZ=2
 exports QUX=
