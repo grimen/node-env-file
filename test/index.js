@@ -140,7 +140,7 @@ module.exports = {
       expect(process.env.FOO).to.be.equal('1');
       expect(process.env.BAR).to.be.equal('bar');
       expect(process.env.BAZ).to.be.equal(undefined);
-      expect(process.env.QUX).to.be.equal(undefined);
+      expect(process.env.QUX).to.be.equal('');
 
       process.env.FOO = 'foo2';
 
@@ -151,7 +151,7 @@ module.exports = {
       expect(process.env.FOO).to.be.equal('foo2');
       expect(process.env.BAR).to.be.equal('bar');
       expect(process.env.BAZ).to.be.equal(undefined);
-      expect(process.env.QUX).to.be.equal(undefined);
+      expect(process.env.QUX).to.be.equal('');
 
       process.env.FOO = 'foo2';
 
@@ -162,7 +162,7 @@ module.exports = {
       expect(process.env.FOO).to.be.equal('1');
       expect(process.env.BAR).to.be.equal('bar');
       expect(process.env.BAZ).to.be.equal(undefined);
-      expect(process.env.QUX).to.be.equal(undefined);
+      expect(process.env.QUX).to.be.equal('');
     },
 
     '("./fixtures/.env.3")': function () {
@@ -255,7 +255,7 @@ module.exports = {
       expect(process.env.FOO).to.be.equal('1');
       expect(process.env.BAR).to.be.equal('bar');
       expect(process.env.BAZ).to.be.equal(undefined);
-      expect(process.env.QUX).to.be.equal(undefined);
+      expect(process.env.QUX).to.be.equal('');
 
       process.env.FOO = 'foo2';
 
@@ -266,7 +266,7 @@ module.exports = {
       expect(process.env.FOO).to.be.equal('foo2');
       expect(process.env.BAR).to.be.equal('bar');
       expect(process.env.BAZ).to.be.equal(undefined);
-      expect(process.env.QUX).to.be.equal(undefined);
+      expect(process.env.QUX).to.be.equal('');
 
       process.env.FOO = 'foo2';
 
@@ -277,7 +277,7 @@ module.exports = {
       expect(process.env.FOO).to.be.equal('1');
       expect(process.env.BAR).to.be.equal('bar');
       expect(process.env.BAZ).to.be.equal(undefined);
-      expect(process.env.QUX).to.be.equal(undefined);
+      expect(process.env.QUX).to.be.equal('');
     },
 
     '("./fixtures/.env.exports.3")': function () {
