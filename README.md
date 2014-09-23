@@ -14,7 +14,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
   BAR=bar1
   BAZ=1
   QUX=
-
+  # QUUX=
 ```
 
 **`.env2`**
@@ -26,6 +26,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
   exports BAR=bar2
   exports BAZ=2
   exports QUX=
+  # exports QUUX=
 
 ```
 
@@ -43,6 +44,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
   assert.equal(process.env.BAR, "bar1");
   assert.equal(process.env.BAZ, "1");
   assert.equal(process.env.QUX, "");
+  assert.equal(process.env.QUUX, undefined);
 
   // Load another ENV file - and overwrite any defined ENV variables.
   env(__dirname + '/.env2', {overwrite: true});
@@ -50,6 +52,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
   assert.equal(process.env.BAR, "bar2");
   assert.equal(process.env.BAZ, "2");
   assert.equal(process.env.QUX, "");
+  assert.equal(process.env.QUUX, undefined);
 ```
 
 
