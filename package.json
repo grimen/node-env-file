@@ -2,7 +2,7 @@
   "name": "node-env-file",
   "description": "Parse and load environment files (containing ENV variable exports) into Node.js environment, i.e. `process.env`.",
   "keywords": ["process", "env", "file", "files", ".env", "ENV", "process.env", "parse", "load", "export", "exports"],
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/grimen/node-env-file",
   "repository": {
     "type": "git",

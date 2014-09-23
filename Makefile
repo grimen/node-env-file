@@ -16,4 +16,7 @@ test-ci:
 install:
 	npm install
 
+release:
+	npm publish
+
 .PHONY: example test test-ci install
