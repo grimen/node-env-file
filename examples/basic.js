@@ -4,8 +4,8 @@ var env = require('../');
 process.env.FOO = "defaultfoo";
 
 // Load any undefined ENV variables form a specified file.
-env(__dirname + '/.env');
-assert.equal(process.env.FOO, "defaultfoo");
+env(__dirname + '/.env', {verbose: true, overwrite: true});
+assert.equal(process.env.FOO, "foo1");
 assert.equal(process.env.BAR, "bar1");
 assert.equal(process.env.BAZ, "1");
 assert.equal(process.env.QUX, "");
