@@ -20,6 +20,7 @@ module.exports = {
     delete process.env.BAR;
     delete process.env.BAZ;
     delete process.env.QUX;
+    delete process.env.NORF;
   },
 
   '()': function() {
@@ -179,6 +180,19 @@ module.exports = {
       }).to.not.throw(Error);
 
       expect(process.env.FOO).to.be.equal('http://foo.com#hash?bar=baz');
+    },
+
+
+    '("./fixtures/.env.5")': function () {
+      expect(function() {
+        env(__dirname + '/fixtures/.env.5');
+      }).to.not.throw(Error);
+
+      expect(process.env.FOO).to.be.equal('');
+      expect(process.env.BAR).to.be.equal('1');
+      expect(process.env.BAZ).to.be.equal('');
+      expect(process.env.QUX).to.be.equal('sample');
+      expect(process.env.NORF).to.be.equal('');
     },
 
     '("./fixtures/.env.exports.0")': function () {
