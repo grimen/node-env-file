@@ -67,7 +67,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
 * `(filepath, options)`
 
     ```javascript
-    env('./path/to/.env', {verbose: true, overwrite: true});
+    env('./path/to/.env', {verbose: true, overwrite: true, raise: false, logger: console});
     ```
 
 
