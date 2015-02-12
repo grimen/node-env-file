@@ -1,3 +1,6 @@
+#!/usr/bin/make -f
+
+MODULE_BIN := ./node_modules/.bin
 
 all: test-watch
 
@@ -5,13 +8,13 @@ example:
 	node ./examples/basic.js
 
 test:
-	./node_modules/.bin/mocha ./test/index.js
+	@ $(MODULE_BIN)/mocha ./test/index.js
 
 test-watch:
-	./node_modules/.bin/mocha ./test/index.js --watch
+	@ $(MODULE_BIN)/mocha ./test/index.js --watch
 
 test-ci:
-	./node_modules/.bin/mocha ./test/index.js --reporter dot --ignore-leaks
+	@ $(MODULE_BIN)/mocha ./test/index.js --reporter dot --ignore-leaks
 
 install:
 	npm install
