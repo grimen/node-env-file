@@ -4,3 +4,8 @@ exports FOO=foo2
 exports BAR=bar2
 exports BAZ=2
 exports QUX=
+
+# exports IGNORE
+# exports IGNORE=
+# exports IGNORE=1
+# exports IGNORE="1"

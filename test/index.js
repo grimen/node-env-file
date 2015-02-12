@@ -23,12 +23,17 @@ module.exports = {
         delete process.env.BAZ
         delete process.env.QUX
         delete process.env.NORF
+        delete process.env.IGNORE
     },
 
     '()': function() {
         expect(function() {
             env()
         }).to.throw(TypeError)
+
+        expect(function() {
+            env(__dirname + '/fixtures/.env.100', {raise: false})
+        }).to.not.throw(Error)
     },
 
     // non-existing
@@ -43,6 +48,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -54,6 +60,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -65,6 +72,11 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
+
+            expect(function() {
+                env(__dirname + '/fixtures/.env.100', {raise: false})
+            }).to.not.throw(Error)
         }
     },
 
@@ -78,6 +90,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -89,6 +102,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -100,6 +114,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.1")': function () {
@@ -111,6 +126,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -122,6 +138,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -133,6 +150,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.2")': function () {
@@ -144,6 +162,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal('bar')
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal('')
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -155,6 +174,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal('bar')
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal('')
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -166,6 +186,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal('bar')
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal('')
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.3")': function () {
@@ -174,6 +195,10 @@ module.exports = {
             }).to.not.throw(Error)
 
             expect(process.env.FOO).to.be.equal('http://foo.com?bar=baz')
+            expect(process.env.BAR).to.be.equal(undefined)
+            expect(process.env.BAZ).to.be.equal(undefined)
+            expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.4")': function () {
@@ -182,6 +207,10 @@ module.exports = {
             }).to.not.throw(Error)
 
             expect(process.env.FOO).to.be.equal('http://foo.com#hash?bar=baz')
+            expect(process.env.BAR).to.be.equal(undefined)
+            expect(process.env.BAZ).to.be.equal(undefined)
+            expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
 
@@ -195,6 +224,7 @@ module.exports = {
             expect(process.env.BAZ).to.be.equal('')
             expect(process.env.QUX).to.be.equal('sample')
             expect(process.env.NORF).to.be.equal('')
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.exports.0")': function () {
@@ -206,6 +236,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -217,6 +248,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -228,6 +260,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.exports.1")': function () {
@@ -239,6 +272,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -250,6 +284,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -261,6 +296,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal(undefined)
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.exports.2")': function () {
@@ -272,6 +308,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal('bar')
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal('')
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -283,6 +320,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal('bar')
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal('')
+            expect(process.env.IGNORE).to.be.equal(undefined)
 
             process.env.FOO = 'foo2'
 
@@ -294,6 +332,7 @@ module.exports = {
             expect(process.env.BAR).to.be.equal('bar')
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal('')
+            expect(process.env.IGNORE).to.be.equal(undefined)
         },
 
         '("./fixtures/.env.exports.3")': function () {
@@ -302,6 +341,22 @@ module.exports = {
             }).to.not.throw(Error)
 
             expect(process.env.FOO).to.be.equal('http://foo.com?bar=baz')
+            expect(process.env.BAR).to.be.equal(undefined)
+            expect(process.env.BAZ).to.be.equal(undefined)
+            expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
+        },
+
+        '("./fixtures/.env.exports.4")': function () {
+            expect(function() {
+                env(__dirname + '/fixtures/.env.exports.4')
+            }).to.not.throw(Error)
+
+            expect(process.env.FOO).to.be.equal('http://foo.com#hash?bar=baz')
+            expect(process.env.BAR).to.be.equal(undefined)
+            expect(process.env.BAZ).to.be.equal(undefined)
+            expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         }
     }
 
