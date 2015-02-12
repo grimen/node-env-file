@@ -101,36 +101,6 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
 * **[node-env-flag](http://github.com/grimen/node-env-flag)**
 
 
-## Notes
-
-### Bash based approach:
-
-**`Makefile`**
-
-```bash
-  define LOAD_ENV
-    ENV_FILE=$${2:-'.env'}
-    echo "LOAD: $$ENV_FILE"
-
-    if [ -f $$ENV_FILE ]; then
-      while read line || [ -n "$$line" ]; do
-        if [[ "$$line" == *=* ]] && [[ "$$line" != #* ]]; then
-          # TODO: handle exports case
-          echo "  export $$line"
-          eval "export $$line"
-        fi
-      done < "$$ENV_FILE"
-    fi
-  endef
-  export LOAD_ENV
-
-  env:
-    eval "$$LOAD_ENV"
-
-  ...
-```
-
-
 ## License
 
 Released under the MIT license.
