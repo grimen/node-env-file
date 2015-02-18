@@ -42,8 +42,7 @@ function _prepareFixtures() {
             var fixtureData = fs.readFileSync(fixtureFile, 'utf-8')
             var fixtureDataWithCR = fixtureData.replace(/\n/gmi, "\r\n")
 
-            console.log(tmpEnvFile)
-            // console.log(tmpEnvFile, fixtureDataWithCR)
+            // debug: console.log(tmpEnvFile)
 
             fs.writeFileSync(tmpEnvFile, fixtureDataWithCR, 'utf-8')
         })
