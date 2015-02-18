@@ -48,7 +48,7 @@ function _prepareFixtures() {
         })
 }
 
-// temp.track()
+temp.track()
 
 // -----------------------
 //  Test
