@@ -47,12 +47,12 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "chai": "latest",
-    "glob": "^4.3.5",
-    "temp": "^0.8.1"
+    "glob": "~3.2.0",
+    "temp": "~0.8.0"
   },
   "devDependencies": {
     "mocha": "latest",
+    "chai": "latest",
     "cover": "latest"
   }
 }
