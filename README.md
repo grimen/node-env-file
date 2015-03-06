@@ -1,4 +1,4 @@
-# NODE-ENV-FILE [![Build Status](https://secure.travis-ci.org/grimen/node-env-file.png)](http://travis-ci.org/grimen/node-env-file)
+# NODE-ENV-FILE [![Build Status](https://secure.travis-ci.org/grimen/node-env-file.svg)](http://travis-ci.org/grimen/node-env-file)
 
 Parse and load environment files (containing ENV variable exports) into Node.js environment, i.e. `process.env`.
 
