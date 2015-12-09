@@ -38,7 +38,7 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
 
   process.env.FOO = "defaultfoo";
 
-  // Load any undefined ENV variables form a specified file.
+  // Load any undefined ENV variables from a specified file.
   env(__dirname + '/.env');
   assert.equal(process.env.FOO, "defaultfoo");
   assert.equal(process.env.BAR, "bar1");
@@ -53,6 +53,11 @@ Parse and load environment files (containing ENV variable exports) into Node.js 
   assert.equal(process.env.BAZ, "2");
   assert.equal(process.env.QUX, "");
   assert.equal(process.env.QUUX, undefined);
+  
+  // Load any undefined ENV variables from a specified file, but don't crash if the file doesn't exist
+  // Usefull for testing env vars in development, but using "real" env vars in production
+  envfile(__dirname + '/.env', {raise: false});
+  
 ```
 
 
