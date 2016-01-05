@@ -51,8 +51,7 @@
   "devDependencies": {
     "mocha": "latest",
     "chai": "latest",
-    "cover": "latest",
-    "glob": "~3.2.0",
-    "temp": "~0.8.0"
+    "glob": "latest",
+    "temp": "latest"
   }
 }
