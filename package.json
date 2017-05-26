@@ -1,6 +1,6 @@
 {
   "name": "node-env-file",
-  "description": "Parse and load environment files (containing ENV variable exports) into Node.js environment, i.e. `process.env`.",
+  "description": "Parse and load environment files (containing ENV variable exports) into Node.js environment, i.e. `process.env`. Built on top of https://github.com/grimen/node-env-file.",
   "keywords": [
     "process",
     "env",
@@ -15,26 +15,26 @@
     "exports"
   ],
   "version": "0.1.8",
-  "homepage": "https://github.com/grimen/node-env-file",
+  "homepage": "https://github.com/nekcih/node-env-file",
   "repository": {
     "type": "git",
-    "url": "https://github.com/grimen/node-env-file.git"
+    "url": "https://github.com/nekcih/node-env-file.git"
   },
   "bugs": {
-    "url": "https://github.com/grimen/node-env-file/issues"
+    "url": "https://github.com/nekcih/node-env-file/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/grimen/node-env-file/blob/MIT-LICENSE"
+      "url": "https://github.com/nekcih/node-env-file/blob/MIT-LICENSE"
     }
   ],
-  "author": "Jonas Grimfelt <grimen@gmail.com>",
+  "author": "<argentcove@gmail.com>",
   "maintainers": [
     {
-      "name": "Jonas Grimfelt",
-      "email": "grimen@gmail.com",
-      "web": "https://github.com/grimen"
+      "name": "Mark",
+      "email": "argentcove@gmail.com",
+      "web": "https://github.com/nekcih"
     }
   ],
   "contributors": [],

@@ -402,6 +402,30 @@ module.exports = {
             expect(process.env.BAZ).to.be.equal(undefined)
             expect(process.env.QUX).to.be.equal(undefined)
             expect(process.env.IGNORE).to.be.equal(undefined)
+        },
+
+        // supports substitutions
+        '("./fixtures/.env.exports.5")': function () {
+            expect(function() {
+                env(_fixture('.env.exports.5'), {substitutions: true})
+            }).to.not.throw(Error)
+
+            expect(process.env.FOO).to.be.equal('http://foo.com#hash?bar=baz')
+            expect(process.env.BAR).to.be.equal('http://foo.com#hash?bar=baz')
+            expect(process.env.BAZ).to.be.equal(undefined)
+            expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
+        },
+        '("./fixtures/.env.exports.6")': function () {
+            expect(function() {
+                env(_fixture('.env.exports.6'), {substitutions: true})
+            }).to.not.throw(Error)
+
+            expect(process.env.FOO).to.be.equal(undefined)
+            expect(process.env.BAR).to.be.equal('http://substituted.com#hash?bar=baz')
+            expect(process.env.BAZ).to.be.equal(undefined)
+            expect(process.env.QUX).to.be.equal(undefined)
+            expect(process.env.IGNORE).to.be.equal(undefined)
         }
     }
 
